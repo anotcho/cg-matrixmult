@@ -32,7 +32,6 @@ function Init() {
 
 // called whenever user clicks 'Add' button
 function AddTransform() {
-    console.log("works");
     if (app.transforms.length < 5) {
         app.transforms.push({
             type: 'translate',
