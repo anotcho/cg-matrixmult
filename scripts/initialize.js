@@ -1,6 +1,7 @@
 var app;
 
 function Init() {
+    console.log("a");
     var start_vertex = new Vector(4);
     var final_vertex = new Vector(4)
     Vector4(start_vertex, 0, 0, 0, 1);
