@@ -29,11 +29,11 @@ function ChangeTransform(index, type, values) {
     app.transforms[index].type = type;
     // update `app.transforms[index].mat4x4`
     console.log(index, type, values);
-    if(type == "transform")
+    if(type == "translate")
     {
-        console.log("trans");
+        Mat4x4Translate(app.transforms[index].mat4x4, values[0], values[1], values[2]);
     } else if(type == "scale") {
-        console.log("scale");
+        Mat4x4Scale(app.transforms[index].mat4x4, values[0], values[1], values[2]);
     }
 
     // recalculate compound transform and tranformed vertex
