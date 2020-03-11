@@ -34,6 +34,12 @@ function ChangeTransform(index, type, values) {
         Mat4x4Translate(app.transforms[index].mat4x4, values[0], values[1], values[2]);
     } else if(type == "scale") {
         Mat4x4Scale(app.transforms[index].mat4x4, values[0], values[1], values[2]);
+    } else if(type == "rotate_x") {
+        Mat4x4RotateX(app.transforms[index].mat4x4, values[0]);
+    } else if(type == "rotate_y") {
+        Mat4x4RotateY(app.transforms[index].mat4x4, values[0]);
+    } else if(type == "rotate_z") {
+        Mat4x4RotateZ(app.transforms[index].mat4x4, values[0]);
     }
 
     // recalculate compound transform and tranformed vertex
