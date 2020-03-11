@@ -1,21 +1,41 @@
 // set values of mat4x4 to the identity matrix
 function Mat4x4Identity(mat4x4) {
-
+    mat4x4.values = [
+        [1,0,0,0],
+        [0,1,0,0],
+        [0,0,1,0],
+        [0,0,0,1]
+    ]
 }
 
 // set values of mat4x4 to the translate matrix
 function Mat4x4Translate(mat4x4, tx, ty, tz) {
-    //mat4x4.values = ...
+    mat4x4.values = [
+        [1,0,0,tx],
+        [0,1,0,ty],
+        [0,0,1,tz],
+        [0,0,0,1]
+    ]
 }
 
 // set values of mat4x4 to the scale matrix
 function Mat4x4Scale(mat4x4, sx, sy, sz) {
-    //mat4x4.values = ...
+    mat4x4.values = [
+        [sx,0,0,0],
+        [0,sy,0,0],
+        [0,0,sz,0],
+        [0,0,0,1]
+    ]
 }
 
 // set values of mat4x4 to the rotate about x-axis matrix
 function Mat4x4RotateX(mat4x4, theta) {
-    //mat4x4.values = ...
+    mat4x4.values = [
+        [1,0,0,0],
+        [0,1,0,0],
+        [0,0,1,0],
+        [0,0,0,1]
+    ]
 }
 
 // set values of mat4x4 to the rotate about y-axis matrix
