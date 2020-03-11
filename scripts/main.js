@@ -30,8 +30,11 @@ function CalculateTransformedVertex(vertex) {
     // multiple vertex by compound_transform
     // `final_vertex = Matrix.multiply(...)`
     var final_vertex = new Vector(4); // change / remove this
+    console.log(compound_transform, vertex, final_vertex);
 
     final_vertex = Matrix.multiply([compound_transform, vertex]);
+
+    console.log(final_vertex);
 
     return final_vertex;
 }
