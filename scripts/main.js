@@ -9,15 +9,8 @@ function CalculateCompoundTransform(transforms) {
     // otherwise multiply all matrices together (in proper order)
     // `compound_transform = Matrix.multiply(...)`
     var tranform_matrices = [];
-    /*var m;
-    if(transforms.length < 2) {
-        compound_transform = transforms[0].mat4x4;
-    } else {
-        for(m of transforms) {
-            tranform_matrices.push(m);
-        }
-        compound_transform = Matrix.multiply(tranform_matrices);
-    }*/
+    
+    compound_transform = new Matrix(4, 4);
 
     return compound_transform;
 }
