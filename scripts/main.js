@@ -16,8 +16,8 @@ function CalculateCompoundTransform(transforms) {
     if(transforms.length == 1) { // runs if only 1 matrix
         compound_transform = transforms[0].mat4x4;
     } else {
-        for(m of transforms) { // runs through transforms and adds matrices to transform_matrices array
-            tranform_matrices.push(m.mat4x4);
+        for(m = transforms.length-1; m >= 0; m--) { // runs through transforms and adds matrices to transform_matrices array
+            tranform_matrices.push(transforms[m].mat4x4);
         }
         compound_transform = Matrix.multiply(tranform_matrices); // sets compound_transform to result of multiplication
     }
