@@ -1,7 +1,6 @@
 var app;
 
 function Init() {
-    console.log("a");
     var start_vertex = new Vector(4);
     var final_vertex = new Vector(4)
     Vector4(start_vertex, 0, 0, 0, 1);
@@ -33,6 +32,7 @@ function Init() {
 
 // called whenever user clicks 'Add' button
 function AddTransform() {
+    console.log("works");
     if (app.transforms.length < 5) {
         app.transforms.push({
             type: 'translate',
