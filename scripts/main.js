@@ -12,6 +12,16 @@ function CalculateCompoundTransform(transforms) {
     
     compound_transform = new Matrix(4, 4);
 
+    var m;
+    if(transforms.length < 2) {
+        compound_transform = transforms[0].mat4x4;
+    } else {
+        for(m of transforms) {
+            tranform_matrices.push(m);
+        }
+        compound_transform = Matrix.multiply(tranform_matrices);
+    }
+
     return compound_transform;
 }
 
