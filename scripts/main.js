@@ -9,8 +9,15 @@ function CalculateCompoundTransform(transforms) {
     // otherwise multiply all matrices together (in proper order)
     // `compound_transform = Matrix.multiply(...)`
     var tranform_matrices = [];
-
-    compound_transform = new Matrix(4, 4); // change / remove this
+    var m;
+    if(transforms.length < 2) {
+        compound_transform = transforms[0].mat4x4;
+    } else {
+        for(m of transforms) {
+            tranform_matrices.push(m);
+        }
+        compound_transform = Matrix.multiply(tranform_matrices);
+    }
 
     return compound_transform;
 }
@@ -27,10 +34,10 @@ function CalculateTransformedVertex(vertex) {
 // automatically called whenever user modifies a transform (changes type or values)
 function ChangeTransform(index, type, values) {
     app.transforms[index].type = type;
-    // update `app.transforms[index].mat4x4`
-    console.log(index, type, values);
-    if(type == "translate")
-    {
+    console.log(index, type, values); // display input for console
+
+    // update `app.transforms[index].mat4x4`, checks the type and then adjusts based on matching transform.js functino
+    if(type == "translate") {
         Mat4x4Translate(app.transforms[index].mat4x4, values[0], values[1], values[2]);
     } else if(type == "scale") {
         Mat4x4Scale(app.transforms[index].mat4x4, values[0], values[1], values[2]);
