@@ -31,7 +31,7 @@ function CalculateTransformedVertex(vertex) {
     // `final_vertex = Matrix.multiply(...)`
     var final_vertex = new Vector(4); // change / remove this
 
-    final_vertex = Matrix.multiply([compound_transform, app.vertex]);
+    final_vertex = Matrix.multiply([compound_transform, vertex]);
 
     return final_vertex;
 }
