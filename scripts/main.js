@@ -13,11 +13,11 @@ function CalculateCompoundTransform(transforms) {
     compound_transform = new Matrix(4, 4);
 
     var m;
-    if(transforms.length < 2) {
+    if(transforms.length == 1) {
         compound_transform = transforms[0].mat4x4;
     } else {
         for(m of transforms) {
-            tranform_matrices.push(m);
+            tranform_matrices.push(m.mat4x4);
         }
         compound_transform = Matrix.multiply(tranform_matrices);
     }
