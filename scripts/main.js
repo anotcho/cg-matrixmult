@@ -28,8 +28,6 @@ function CalculateTransformedVertex(vertex) {
 function ChangeTransform(index, type, values) {
     app.transforms[index].type = type;
     // update `app.transforms[index].mat4x4`
-    console.log(values);
-    Mat4x4Translate(app.transforms[index].mat4x4, values);
 
     // recalculate compound transform and tranformed vertex
     app.compound = CalculateCompoundTransform(app.transforms);
